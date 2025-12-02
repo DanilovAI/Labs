@@ -11,6 +11,9 @@ namespace Lab2
         static void Main(string[] args)
         {
             // Задача 1.17
+            // Написать программу вычисления сопротивления электрической цепи,
+            // состоящей из двух последовательно соединенных сопротивлений.
+            // Извне вводятся величина первого и второго сопротивления.
             /*
             int R1 = Convert.ToInt32(Console.ReadLine());
             int R2 = Convert.ToInt32(Console.ReadLine());
@@ -47,7 +50,7 @@ namespace Lab2
             */
 
             // Задача 2.17
-            
+
             Console.WriteLine("Введите номер месяца:");
             int a = Convert.ToInt32(Console.ReadLine());
             if (a == 12 || a == 1 || a == 2)
