@@ -80,7 +80,7 @@ namespace Lab2
                 Console.WriteLine("Время года: Осень");
             }
             else
-                Console.WriteLine("Ошибка ввода данных!");
+                Console.WriteLine("Ошибка ввода условий!");
             Console.Read();
 
             
