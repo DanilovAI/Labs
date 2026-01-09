@@ -94,12 +94,9 @@
         /// Очистить список
         /// </summary>
         /// <param name="list">Элемент класса PersonList</param>
-        public void ClearList(List<Person> list)
+        public void ClearList()
         {
-            int count = list.Count;
-            list.Clear();
-            Console.WriteLine($"Список очищен." +
-                $" Удалено {count} элементов.");
+            _list.Clear();
         }
 
         /// <summary>
@@ -110,6 +107,17 @@
         {
             int count = list.Count;
             Console.WriteLine($"Количество элементов в списке: {count}");
+        }
+
+        /// <summary>
+        /// Возвращает список
+        /// </summary>
+        public List<Person> List
+        {
+            get
+            {
+                return _list ;
+            }
         }
     }
 }

@@ -79,8 +79,8 @@ namespace Model
                 const int maxAge = 123;
                 if (value < minAge || value > maxAge)
                 {
-                    throw new Exception($"{nameof(Age)} can't be less" +
-                        $" {minAge} or above {maxAge}!");
+                    throw new Exception($"{nameof(Age)} не может быть менее" +
+                        $" {minAge} или более {maxAge}!");
                 }
                 else
                 {
@@ -196,8 +196,29 @@ namespace Model
         /// <param name="person"></param>
         public void PrintPersonInfo(Person person)
         {
-            Console.WriteLine($"Имя - {Name}, Фамилия - {Surname}" +
-                $"Возраст - {Age}, Пол - {Gender}.");
+            string gender = string.Empty;
+
+            switch (person.Gender)
+            {
+                case Gender.Male:
+                    {
+                        gender = "Мужчина";
+                        break;
+                    }
+                case Gender.Female:
+                    {
+                        gender = "Женщина";
+                        break;
+                    }
+                default:
+                    {
+                        gender = "Неизвестно";
+                        break;
+                    }
+            }
+
+            Console.WriteLine($"Имя: {Name}, Фамилия: {Surname}, " +
+                $"Возраст: {Age}, Пол: {gender}.");
         }
 
 
