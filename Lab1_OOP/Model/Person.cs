@@ -48,7 +48,7 @@ namespace Model
         public string Name
         {
             get { return _name; }
-            set 
+            set
             {
                 _name = Validate(value, "Имя");
             }
@@ -83,8 +83,8 @@ namespace Model
                         $" {minAge} or above {maxAge}!");
                 }
                 else
-                { 
-                    _age = value;                
+                {
+                    _age = value;
                 }
             }
         }
@@ -157,7 +157,7 @@ namespace Model
         {
             Random random = new Random();
 
-            string[] maleNames = { "Иван", "Алексей", "Дмитрий", 
+            string[] maleNames = { "Иван", "Алексей", "Дмитрий",
                                     "Сергей", "Андрей", "Михаил",
                                     "Владимир", "Александр" };
 
@@ -172,7 +172,7 @@ namespace Model
             string[] surnamesFemale = { "Иванова", "Петрова", "Сидорова",
                                     "Кузнецова", "Смирнова", "Попова",
                                     "Васильева", "Новикова" };
-            
+
             var gender = random.Next(2) == 0
                 ? Gender.Male
                 : Gender.Female;

@@ -13,7 +13,7 @@
         /// <summary>
         /// Конструктор пустого списка
         /// </summary>
-        public PersonList() 
+        public PersonList()
         {
             _list = new List<Person>();
         }
@@ -50,7 +50,7 @@
         /// <returns>Возвращет, удален ли элемент</returns>
         public bool RemovePersonByIndex(int index)
         {
-            if (index < 0  || index >= _list.Count)
+            if (index < 0 || index >= _list.Count)
             {
                 Console.WriteLine($"Ошибка: индекс {index}" +
                     $" вне диапазона [0, {_list.Count - 1}]");

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Model;
 
 namespace Lab1_OOP
@@ -21,6 +17,17 @@ namespace Lab1_OOP
             PersonList list1 = new PersonList();
             PersonList list2 = new PersonList();
 
+            // Заполняем list1 тремя случайными персонами
+            for (int i = 0; i < 3; i++)
+            {
+                list1.AddPerson(Person.GetRandomPerson());
+            }
+
+            // Заполняем list2 тремя случайными персонами
+            for (int i = 0; i < 3; i++)
+            {
+                list2.AddPerson(Person.GetRandomPerson());
+            }
         }
     }
 }
