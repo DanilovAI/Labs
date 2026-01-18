@@ -17,20 +17,17 @@ namespace Lab1_OOP
             PersonList list1 = new PersonList();
             PersonList list2 = new PersonList();
 
-            Console.WriteLine("Создание 1-го списка:");
             for (int i = 0; i < 3; i++)
             {
                 list1.AddPerson(Person.GetRandomPerson());
             }
 
-            Console.WriteLine("\nСоздание 2-го списка:");
             for (int i = 0; i < 3; i++)
             {
                 list2.AddPerson(Person.GetRandomPerson());
             }
             // Вывод созданных списков
-            Console.ReadKey();
-            Console.WriteLine("\nСозданные списки:");
+            Console.WriteLine("Созданные списки:");
             PrintPersonList(list1, "Список 1");
             PrintPersonList(list2, "Список 2");
 

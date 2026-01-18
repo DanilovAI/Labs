@@ -75,12 +75,10 @@ namespace Model
             get { return _age; }
             set
             {
-                //TODO: duplication
-                const int minAge = 0;
-                const int maxAge = 123;
+                //TODO: duplication +
                 if (value < minAge || value > maxAge)
                 {
-                    throw new Exception($"{nameof(Age)} не может быть менее" +
+                    throw new Exception($"Возраст не может быть менее" +
                         $" {minAge} или более {maxAge}!");
                 }
                 else
@@ -94,6 +92,16 @@ namespace Model
         /// Свойство Пол
         /// </summary>
         public Gender Gender { get; set; }
+
+        /// <summary>
+        /// Минимальный возраст человека
+        /// </summary>
+        const int minAge = 0;
+
+        /// <summary>
+        /// Максимальный возраст человека
+        /// </summary>
+        const int maxAge = 123;
 
         /// <summary>
         /// Проверка на содержание только символов кириллицы
@@ -116,11 +124,13 @@ namespace Model
         /// <exception cref="ArgumentException">Неверное значение</exception>
         private static string Validate(string value, string fieldName)
         {
-            //TODO: {}
+            //TODO: {} +
             if (string.IsNullOrEmpty(value))
+            {
                 throw new ArgumentException(
                     $"{fieldName} не может быть пустым " +
                     $"или состоять только из пробелов.");
+            }
 
             bool isRussian = Regex.IsMatch(value, RussianPattern);
             bool isLatin = Regex.IsMatch(value, LatinPattern);
@@ -155,7 +165,11 @@ namespace Model
             }
         }
 
-        //TODO: XML
+        //TODO: XML +
+        /// <summary>
+        /// Создание случайной персоны
+        /// </summary>
+        /// <returns>Возращает созданную персону</returns>
         public static Person GetRandomPerson()
         {
             Random random = new Random();
@@ -180,8 +194,8 @@ namespace Model
                 ? Gender.Male
                 : Gender.Female;
 
-            //TODO: duplication
-            int age = random.Next(0, 123);
+            //TODO: duplication +
+            int age = random.Next(minAge, maxAge);
 
             string name = gender == Gender.Male
                 ? maleNames[random.Next(maleNames.Length)]
@@ -204,22 +218,22 @@ namespace Model
 
             switch (person.Gender)
             {
-                //TODO: RSDN
+                //TODO: RSDN +
                 case Gender.Male:
-                    {
-                        gender = "Мужчина";
-                        break;
-                    }
+                {
+                    gender = "Мужчина";
+                    break;
+                }
                 case Gender.Female:
-                    {
-                        gender = "Женщина";
-                        break;
-                    }
+                {
+                    gender = "Женщина";
+                    break;
+                }
                 default:
-                    {
-                        gender = "Неизвестно";
-                        break;
-                    }
+                {
+                    gender = "Неизвестно";
+                    break;
+                }
             }
 
             Console.WriteLine($"Имя: {Name}, Фамилия: {Surname}, " +

@@ -25,8 +25,7 @@
         public void AddPerson(Person person)
         {
             _list.Add(person);
-            //TODO: remove
-            Console.WriteLine($"Добавлен: {person.Surname} {person.Name}");
+            //TODO: remove +
         }
 
         /// <summary>
@@ -37,11 +36,8 @@
         public bool RemovePerson(Person person)
         {
             bool removed = _list.Remove(person);
-            if (removed)
-            {
-                //TODO: remove
-                Console.WriteLine($"Удален: {person.Surname} {person.Name}");
-            }
+
+            //TODO: remove +
             return removed;
         }
 
@@ -52,19 +48,11 @@
         /// <returns>Возвращет, удален ли элемент</returns>
         public bool RemovePersonByIndex(int index)
         {
-            if (index < 0 || index >= _list.Count)
-            {
-                //TODO: remove
-                Console.WriteLine($"Ошибка: индекс {index}" +
-                    $" вне диапазона [0, {_list.Count - 1}]");
-                return false;
-            }
+            //TODO: remove +
 
             var personToRemove = _list[index];
             _list.RemoveAt(index);
-            //TODO: remove
-            Console.WriteLine($"Удален элемент с индексом {index}:" +
-                $" {personToRemove.Surname} {personToRemove.Name}");
+            //TODO: remove +
             return true;
         }
 
@@ -110,8 +98,7 @@
         public void CountElements(List<Person> list)
         {
             int count = list.Count;
-            //TODO: remove
-            Console.WriteLine($"Количество элементов в списке: {count}");
+            //TODO: remove +
         }
 
         /// <summary>
