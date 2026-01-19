@@ -87,15 +87,7 @@
             _list.Clear();
         }
 
-        //TODO: remove
-        /// <summary>
-        /// Получить количество элементов
-        /// </summary>
-        /// <param name="list">Элемент класса PersonList</param>
-        public void CountElements(List<Person> list)
-        {
-            int count = list.Count;
-        }
+        //TODO: remove +
 
         /// <summary>
         /// Возвращает список

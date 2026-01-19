@@ -40,7 +40,7 @@ namespace Model
         /// <summary>
         /// Создание нового экземпляра класса по умолчанию
         /// </summary>
-        public Person() : this("Ivan", "Ivanov", 18, Gender.Male) { }
+        public Person() { }
 
         /// <summary>
         /// Свойство Имя
@@ -50,8 +50,13 @@ namespace Model
             get { return _name; }
             set
             {
-                //TODO: add validation
+                //TODO: add validation +
                 _name = Validate(value, "Имя");
+
+                if (!string.IsNullOrEmpty(_surname))
+                {
+                    EnsureLanguage();
+                }
             }
         }
 
@@ -64,7 +69,11 @@ namespace Model
             set
             {
                 _surname = Validate(value, "Фамилия");
-                EnsureLanguage();
+                
+                if (!string.IsNullOrEmpty(_name))
+                {
+                    EnsureLanguage();
+                }
             }
         }
 
@@ -93,17 +102,17 @@ namespace Model
         /// </summary>
         public Gender Gender { get; set; }
 
-        //TODO: RSDN
+        //TODO: RSDN +
         /// <summary>
         /// Минимальный возраст человека
         /// </summary>
-        const int minAge = 0;
+        private const int minAge = 0;
 
-        //TODO: RSDN
+        //TODO: RSDN +
         /// <summary>
         /// Максимальный возраст человека
         /// </summary>
-        const int maxAge = 123;
+        private const int maxAge = 123;
 
         /// <summary>
         /// Проверка на содержание только символов кириллицы
