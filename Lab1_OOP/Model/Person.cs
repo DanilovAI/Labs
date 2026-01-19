@@ -50,6 +50,7 @@ namespace Model
             get { return _name; }
             set
             {
+                //TODO: add validation
                 _name = Validate(value, "Имя");
             }
         }
@@ -75,7 +76,6 @@ namespace Model
             get { return _age; }
             set
             {
-                //TODO: duplication +
                 if (value < minAge || value > maxAge)
                 {
                     throw new Exception($"Возраст не может быть менее" +
@@ -93,11 +93,13 @@ namespace Model
         /// </summary>
         public Gender Gender { get; set; }
 
+        //TODO: RSDN
         /// <summary>
         /// Минимальный возраст человека
         /// </summary>
         const int minAge = 0;
 
+        //TODO: RSDN
         /// <summary>
         /// Максимальный возраст человека
         /// </summary>
@@ -124,7 +126,6 @@ namespace Model
         /// <exception cref="ArgumentException">Неверное значение</exception>
         private static string Validate(string value, string fieldName)
         {
-            //TODO: {} +
             if (string.IsNullOrEmpty(value))
             {
                 throw new ArgumentException(
@@ -165,7 +166,6 @@ namespace Model
             }
         }
 
-        //TODO: XML +
         /// <summary>
         /// Создание случайной персоны
         /// </summary>
@@ -194,7 +194,6 @@ namespace Model
                 ? Gender.Male
                 : Gender.Female;
 
-            //TODO: duplication +
             int age = random.Next(minAge, maxAge);
 
             string name = gender == Gender.Male
@@ -218,7 +217,6 @@ namespace Model
 
             switch (person.Gender)
             {
-                //TODO: RSDN +
                 case Gender.Male:
                 {
                     gender = "Мужчина";

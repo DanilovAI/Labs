@@ -25,7 +25,6 @@
         public void AddPerson(Person person)
         {
             _list.Add(person);
-            //TODO: remove +
         }
 
         /// <summary>
@@ -37,7 +36,6 @@
         {
             bool removed = _list.Remove(person);
 
-            //TODO: remove +
             return removed;
         }
 
@@ -48,11 +46,9 @@
         /// <returns>Возвращет, удален ли элемент</returns>
         public bool RemovePersonByIndex(int index)
         {
-            //TODO: remove +
 
             var personToRemove = _list[index];
             _list.RemoveAt(index);
-            //TODO: remove +
             return true;
         }
 
@@ -91,6 +87,7 @@
             _list.Clear();
         }
 
+        //TODO: remove
         /// <summary>
         /// Получить количество элементов
         /// </summary>
@@ -98,7 +95,6 @@
         public void CountElements(List<Person> list)
         {
             int count = list.Count;
-            //TODO: remove +
         }
 
         /// <summary>
@@ -108,7 +104,7 @@
         {
             get
             {
-                return _list ;
+                return _list;
             }
         }
     }
