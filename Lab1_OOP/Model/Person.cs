@@ -116,13 +116,13 @@ namespace Model
         /// <summary>
         /// Проверка на содержание только символов кириллицы
         /// </summary>
-        private const string RussianPattern =
+        private const string _russianPattern =
             @"^[а-яА-ЯёЁ]+(?:-[а-яА-ЯёЁ]+)?$";
 
         /// <summary>
         /// Проверка на содержание только символов латиницы
         /// </summary>
-        private const string LatinPattern =
+        private const string _latinPattern =
             @"^[a-zA-Z]+(?:-[a-zA-Z]+)?$";
 
         /// <summary>
@@ -141,8 +141,8 @@ namespace Model
                     $"или состоять только из пробелов.");
             }
 
-            bool isRussian = Regex.IsMatch(value, RussianPattern);
-            bool isLatin = Regex.IsMatch(value, LatinPattern);
+            bool isRussian = Regex.IsMatch(value, _russianPattern);
+            bool isLatin = Regex.IsMatch(value, _latinPattern);
 
             if (!isRussian && !isLatin)
             {
@@ -163,8 +163,8 @@ namespace Model
         /// <exception cref="Exception">Несовпадение языков</exception>
         private void EnsureLanguage()
         {
-            bool nameIsRussian = Regex.IsMatch(_name, RussianPattern);
-            bool surnameIsRussian = Regex.IsMatch(_surname, RussianPattern);
+            bool nameIsRussian = Regex.IsMatch(_name, _russianPattern);
+            bool surnameIsRussian = Regex.IsMatch(_surname, _russianPattern);
 
             if (nameIsRussian != surnameIsRussian)
             {
