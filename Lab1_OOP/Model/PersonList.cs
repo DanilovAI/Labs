@@ -43,13 +43,10 @@
         /// Удалить элемент по индексу
         /// </summary>
         /// <param name="index">Индекс</param>
-        /// <returns>Возвращет, удален ли элемент</returns>
-        public bool RemovePersonByIndex(int index)
+        public void RemovePersonByIndex(int index)
         {
-            //TODO: WTF?
-            var personToRemove = _list[index];
+            //TODO: WTF? +
             _list.RemoveAt(index);
-            return true;
         }
 
         /// <summary>

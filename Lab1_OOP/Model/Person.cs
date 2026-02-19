@@ -84,10 +84,10 @@ namespace Model
             get { return _age; }
             set
             {
-                if (value < minAge || value > maxAge)
+                if (value < _minAge || value > _maxAge)
                 {
                     throw new Exception($"Возраст не может быть менее" +
-                        $" {minAge} или более {maxAge}!");
+                        $" {_minAge} или более {_maxAge}!");
                 }
                 else
                 {
@@ -101,17 +101,17 @@ namespace Model
         /// </summary>
         public Gender Gender { get; set; }
 
-        //TODO: RSDN
+        //TODO: RSDN +
         /// <summary>
         /// Минимальный возраст человека
         /// </summary>
-        private const int minAge = 0;
+        private const int _minAge = 0;
 
-        //TODO: RSDN
+        //TODO: RSDN +
         /// <summary>
         /// Максимальный возраст человека
         /// </summary>
-        private const int maxAge = 123;
+        private const int _maxAge = 123;
 
         /// <summary>
         /// Проверка на содержание только символов кириллицы
@@ -202,7 +202,7 @@ namespace Model
                 ? Gender.Male
                 : Gender.Female;
 
-            int age = random.Next(minAge, maxAge);
+            int age = random.Next(_minAge, _maxAge);
 
             string name = gender == Gender.Male
                 ? maleNames[random.Next(maleNames.Length)]
