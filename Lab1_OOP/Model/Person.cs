@@ -50,7 +50,6 @@ namespace Model
             get { return _name; }
             set
             {
-                //TODO: add validation +
                 _name = Validate(value, "Имя");
 
                 if (!string.IsNullOrEmpty(_surname))
@@ -102,13 +101,13 @@ namespace Model
         /// </summary>
         public Gender Gender { get; set; }
 
-        //TODO: RSDN +
+        //TODO: RSDN
         /// <summary>
         /// Минимальный возраст человека
         /// </summary>
         private const int minAge = 0;
 
-        //TODO: RSDN +
+        //TODO: RSDN
         /// <summary>
         /// Максимальный возраст человека
         /// </summary>
@@ -246,7 +245,5 @@ namespace Model
             Console.WriteLine($"Имя: {Name}, Фамилия: {Surname}, " +
                 $"Возраст: {Age}, Пол: {gender}.");
         }
-
-
     }
 }

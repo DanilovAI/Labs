@@ -46,7 +46,7 @@
         /// <returns>Возвращет, удален ли элемент</returns>
         public bool RemovePersonByIndex(int index)
         {
-
+            //TODO: WTF?
             var personToRemove = _list[index];
             _list.RemoveAt(index);
             return true;
@@ -86,8 +86,6 @@
         {
             _list.Clear();
         }
-
-        //TODO: remove +
 
         /// <summary>
         /// Возвращает список

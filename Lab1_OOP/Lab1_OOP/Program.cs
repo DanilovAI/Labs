@@ -177,6 +177,5 @@ namespace Lab1_OOP
                 }
             }
         }
-
-    }   
+    }
 }
