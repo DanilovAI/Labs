@@ -45,7 +45,6 @@
         /// <param name="index">Индекс</param>
         public void RemovePersonByIndex(int index)
         {
-            //TODO: WTF? +
             _list.RemoveAt(index);
         }
 

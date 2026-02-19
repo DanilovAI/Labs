@@ -101,13 +101,11 @@ namespace Model
         /// </summary>
         public Gender Gender { get; set; }
 
-        //TODO: RSDN +
         /// <summary>
         /// Минимальный возраст человека
         /// </summary>
         private const int _minAge = 0;
 
-        //TODO: RSDN +
         /// <summary>
         /// Максимальный возраст человека
         /// </summary>
