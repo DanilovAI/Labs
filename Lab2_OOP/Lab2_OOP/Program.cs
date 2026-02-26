@@ -40,18 +40,18 @@ namespace Lab2_OOP
             Console.Write("4-й человек в списке:\n\n");
             switch (listOfPersons.GetPersonByIndex(fourthNumberInList))
             {
-                //TOOD: отступы
+                //TOOD: отступы +
                 case Adult adult:
-                    {
-                        Console.WriteLine(adult.GoToWork());
-                        break;
-                    }
+                {
+                    Console.WriteLine(adult.GoToWork());
+                    break;
+                }
 
                 case Child child:
-                    {
-                        Console.WriteLine(child.PlayGames());
-                        break;
-                    }
+                {
+                    Console.WriteLine(child.PlayGames());
+                    break;
+                }
             }
 
         }
