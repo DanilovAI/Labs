@@ -20,7 +20,7 @@ namespace Lab2_OOP
 
             int listLength = 7;
             //TODO: magic (to const) +
-            Console.WriteLine("Генерация 7 случайных людей:\n");
+            Console.WriteLine($"Генерация {listLength} случайных людей:\n");
 
             for (int i = 0; i < listLength; i++)
             {
@@ -37,7 +37,7 @@ namespace Lab2_OOP
 
             int fourthNumberInList = 3;
             //TODO: magic (to const) +
-            Console.Write("4-й человек в списке:\n\n");
+            Console.Write($"{fourthNumberInList+1}-й человек в списке:\n\n");
             switch (listOfPersons.GetPersonByIndex(fourthNumberInList))
             {
                 //TOOD: отступы +
