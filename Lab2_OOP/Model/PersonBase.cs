@@ -3,11 +3,11 @@ using System.Text.RegularExpressions;
 
 namespace Model
 {
-    //TODO: RSDN
+    //TODO: RSDN +
     /// <summary>
     /// Класс, содержащий данные о человеке
     /// </summary>
-    public abstract class Person
+    public abstract class PersonBase
     {
         /// <summary>
         /// Имя
@@ -43,7 +43,7 @@ namespace Model
         /// <param name="surname">Фамилия</param>
         /// <param name="age">Возраст</param>
         /// <param name="gender">Пол</param>
-        public Person(string name, string surname, int age, Gender gender)
+        public PersonBase(string name, string surname, int age, Gender gender)
         {
             Name = name;
             Surname = surname;
@@ -54,7 +54,7 @@ namespace Model
         /// <summary>
         /// Создание нового экземпляра класса по умолчанию
         /// </summary>
-        public Person() { }
+        public PersonBase() { }
 
         /// <summary>
         /// Свойство Имя

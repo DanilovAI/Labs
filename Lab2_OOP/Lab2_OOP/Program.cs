@@ -17,24 +17,28 @@ namespace Lab2_OOP
         {
 
             var listOfPersons = new PersonList();
-            //TODO: magic (to const)
+
+            int listLength = 7;
+            //TODO: magic (to const) +
             Console.WriteLine("Генерация 7 случайных людей:\n");
 
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < listLength; i++)
             {
                 listOfPersons.AddPerson(RandomPerson.GetRandomPerson());
             }
 
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < listLength; i++)
             {
                 Console.WriteLine($"{i+1}-й человек\n");
                 Console.WriteLine(listOfPersons.GetPersonByIndex(i)
                                                 .GetInfo());
                 Console.WriteLine();
             }
-            //TODO: magic (to const)
+
+            int fourthNumberInList = 3;
+            //TODO: magic (to const) +
             Console.Write("4-й человек в списке:\n\n");
-            switch (listOfPersons.GetPersonByIndex(3))
+            switch (listOfPersons.GetPersonByIndex(fourthNumberInList))
             {
                 //TOOD: отступы
                 case Adult adult:

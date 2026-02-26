@@ -59,7 +59,7 @@ namespace Model
         /// Заполнение полей базового класса
         /// </summary>
         /// <param name="person">Человек</param>
-        public static void CreateRandomPersonInfo(Person person, 
+        public static void CreateRandomPersonInfo(PersonBase person, 
                                                     Gender? gender = null)
         {
             person.Gender = gender ?? (Gender)_random.Next(2);
@@ -87,9 +87,10 @@ namespace Model
                                              Adult.MaxAdultAge);
             if (!married)
             {
+                int numberOfMaritalStatuses = 4;
                 randomAdult.MaritalStatus = 
-                    //TODO: magic (to const)
-                    (MaritalStatus)_random.Next(0, 4);
+                    //TODO: magic (to const) +
+                    (MaritalStatus)_random.Next(0, numberOfMaritalStatuses);
                 if (randomAdult.MaritalStatus == MaritalStatus.Married)
                 {
                     randomAdult.Partner = 
@@ -150,8 +151,10 @@ namespace Model
             {   "Детский сад Лесовичок","Детский сад Радуга",
                 "Детский сад Солнышко"
             };
-            //TODO: magic (to const)
-            randomChild.School = randomChild.Age >= 7
+
+            int kindergartenAge = 7;
+            //TODO: magic (to const) +
+            randomChild.School = randomChild.Age >= kindergartenAge
                 ? schools[_random.Next(schools.Length)]
                 : kindergartens[_random.Next(kindergartens.Length)];
 
@@ -162,7 +165,7 @@ namespace Model
         /// Генерация случайного человека - взрослого или ребенка
         /// </summary>
         /// <returns></returns>
-        public static Person GetRandomPerson()
+        public static PersonBase GetRandomPerson()
         {
             if (_random.Next(0, 2) != 0)
             {

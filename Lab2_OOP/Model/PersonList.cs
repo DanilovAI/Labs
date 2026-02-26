@@ -8,21 +8,21 @@
         /// <summary>
         /// Список объектов класса Person
         /// </summary>
-        private List<Person> _list;
+        private List<PersonBase> _list;
 
         /// <summary>
         /// Конструктор пустого списка
         /// </summary>
         public PersonList()
         {
-            _list = new List<Person>();
+            _list = new List<PersonBase>();
         }
 
         /// <summary>
         /// Добавить элемент в список
         /// </summary>
         /// <param name="person">Элемент класса Person</param>
-        public void AddPerson(Person person)
+        public void AddPerson(PersonBase person)
         {
             _list.Add(person);
         }
@@ -32,7 +32,7 @@
         /// </summary>
         /// <param name="person">Элемент класса Person</param>
         /// <returns>Возвращает, удален ли элемент</returns>
-        public void RemovePerson(Person person)
+        public void RemovePerson(PersonBase person)
         {
             _list.Remove(person);
         }
@@ -51,7 +51,7 @@
         /// </summary>
         /// <param name="index">Индекс</param>
         /// <returns>Возвращает полученный элемент</returns>
-        public Person GetPersonByIndex(int index)
+        public PersonBase GetPersonByIndex(int index)
         {
             if (index < 0 || index >= _list.Count)
             {
@@ -67,7 +67,7 @@
         /// </summary>
         /// <param name="person">Элемент класса Person</param>
         /// <returns>Возвращает индекс</returns>
-        public int IndexOfPerson(Person person)
+        public int IndexOfPerson(PersonBase person)
         {
             return _list.IndexOf(person);
         }
@@ -84,7 +84,7 @@
         /// <summary>
         /// Возвращает список
         /// </summary>
-        public List<Person> List
+        public List<PersonBase> List
         {
             get
             {

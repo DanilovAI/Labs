@@ -6,7 +6,7 @@ namespace Model
     /// <summary>
     /// Класс, содержащий данные о взрослом человеке
     /// </summary>
-    public class Adult : Person
+    public class Adult : PersonBase
     {
         /// <summary>
         /// Паспортные данные

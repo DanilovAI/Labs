@@ -4,7 +4,7 @@ namespace Model
     /// <summary>
     /// Класс, содержащий данные о ребенке
     /// </summary>
-    public class Child : Person
+    public class Child : PersonBase
     {
         /// <summary>
         /// Отец ребенка
