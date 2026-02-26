@@ -89,7 +89,6 @@ namespace Model
             {
                 int numberOfMaritalStatuses = 4;
                 randomAdult.MaritalStatus = 
-                    //TODO: magic (to const) +
                     (MaritalStatus)_random.Next(0, numberOfMaritalStatuses);
                 if (randomAdult.MaritalStatus == MaritalStatus.Married)
                 {
@@ -153,7 +152,6 @@ namespace Model
             };
 
             int kindergartenAge = 7;
-            //TODO: magic (to const) +
             randomChild.School = randomChild.Age >= kindergartenAge
                 ? schools[_random.Next(schools.Length)]
                 : kindergartens[_random.Next(kindergartens.Length)];

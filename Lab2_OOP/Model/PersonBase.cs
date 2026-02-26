@@ -3,7 +3,6 @@ using System.Text.RegularExpressions;
 
 namespace Model
 {
-    //TODO: RSDN +
     /// <summary>
     /// Класс, содержащий данные о человеке
     /// </summary>

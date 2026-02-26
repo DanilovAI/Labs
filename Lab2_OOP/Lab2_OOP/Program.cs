@@ -13,13 +13,12 @@ namespace Lab2_OOP
         /// Главное тело программы
         /// </summary>
         /// <param name="args">Аргумент</param>
-        static void Main(string[] args)
+        internal static void Main(string[] args)
         {
 
             var listOfPersons = new PersonList();
 
-            int listLength = 7;
-            //TODO: magic (to const) +
+            const int listLength = 7;
             Console.WriteLine($"Генерация {listLength} случайных людей:\n");
 
             for (int i = 0; i < listLength; i++)
@@ -29,18 +28,16 @@ namespace Lab2_OOP
 
             for (int i = 0; i < listLength; i++)
             {
-                Console.WriteLine($"{i+1}-й человек\n");
+                Console.WriteLine($"{i + 1}-й человек\n");
                 Console.WriteLine(listOfPersons.GetPersonByIndex(i)
                                                 .GetInfo());
                 Console.WriteLine();
             }
 
-            int fourthNumberInList = 3;
-            //TODO: magic (to const) +
-            Console.Write($"{fourthNumberInList+1}-й человек в списке:\n\n");
+            const int fourthNumberInList = 3;
+            Console.Write($"{fourthNumberInList + 1}-й человек в списке:\n\n");
             switch (listOfPersons.GetPersonByIndex(fourthNumberInList))
             {
-                //TOOD: отступы +
                 case Adult adult:
                 {
                     Console.WriteLine(adult.GoToWork());
