@@ -98,8 +98,8 @@ namespace Model
             set
             {
                 _job = string.IsNullOrEmpty(value)
-                ? "Безработный"
-                : $"{value}";
+                    ? "Безработный"
+                    : $"{value}";
             }
         }
 

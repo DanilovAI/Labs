@@ -17,7 +17,7 @@ namespace Lab2_OOP
         {
 
             var listOfPersons = new PersonList();
-
+            //TODO: magic (to const)
             Console.WriteLine("Генерация 7 случайных людей:\n");
 
             for (int i = 0; i < 7; i++)
@@ -32,10 +32,11 @@ namespace Lab2_OOP
                                                 .GetInfo());
                 Console.WriteLine();
             }
-
+            //TODO: magic (to const)
             Console.Write("4-й человек в списке:\n\n");
             switch (listOfPersons.GetPersonByIndex(3))
             {
+                //TOOD: отступы
                 case Adult adult:
                     {
                         Console.WriteLine(adult.GoToWork());

@@ -88,6 +88,7 @@ namespace Model
             if (!married)
             {
                 randomAdult.MaritalStatus = 
+                    //TODO: magic (to const)
                     (MaritalStatus)_random.Next(0, 4);
                 if (randomAdult.MaritalStatus == MaritalStatus.Married)
                 {
@@ -149,7 +150,7 @@ namespace Model
             {   "Детский сад Лесовичок","Детский сад Радуга",
                 "Детский сад Солнышко"
             };
-
+            //TODO: magic (to const)
             randomChild.School = randomChild.Age >= 7
                 ? schools[_random.Next(schools.Length)]
                 : kindergartens[_random.Next(kindergartens.Length)];

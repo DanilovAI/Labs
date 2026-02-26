@@ -157,6 +157,5 @@ namespace Model
         {
             return $"{Name} {Surname} играет в игры";
         }
-
     }
 }

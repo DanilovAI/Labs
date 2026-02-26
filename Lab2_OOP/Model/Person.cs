@@ -3,6 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace Model
 {
+    //TODO: RSDN
     /// <summary>
     /// Класс, содержащий данные о человеке
     /// </summary>
@@ -153,6 +154,5 @@ namespace Model
         /// Получение информации о человеке
         /// </summary>
         public abstract string GetInfo();
-                    
     }
 }
