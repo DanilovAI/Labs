@@ -42,7 +42,6 @@ namespace Model
                     throw new ArgumentException("Вид топлива основного " +
                         "двигателя и дополнительного должны отличаться");
                 }
-                //TODO: duplication +
                 CheckIsMotorEmpty(value);
                 _additionalMotor = value;
             }

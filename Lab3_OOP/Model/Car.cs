@@ -20,6 +20,7 @@ namespace Model
         /// Конструктор класса машина
         /// </summary>
         /// <param name="motor">Двигатель</param>
+        /// //TODO: rename
         /// <param name="mass">Масса (т)</param>
         public Car(Motor motor, double mass) 
         {
@@ -40,7 +41,6 @@ namespace Model
             get { return _motor; } 
             set 
             {
-                //TODO: duplication +
                 CheckIsMotorEmpty(value);
                 _motor = value;
             } 

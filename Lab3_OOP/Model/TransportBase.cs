@@ -7,13 +7,11 @@ namespace Model
     /// </summary>
     public abstract class TransportBase
     {
-        //TODO: rename +
         /// <summary>
         /// Масса (т)
         /// </summary>
         private double _weight;
 
-        //TODO: rename +
         /// <summary>
         /// Свойство масса
         /// </summary>
@@ -22,7 +20,6 @@ namespace Model
             get { return _weight; }
             set
             {
-                //TODO: duplication +
                 ReadPositiveNumber(value);
                 _weight = value;
             }

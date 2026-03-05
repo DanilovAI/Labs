@@ -36,7 +36,6 @@ namespace Model
             get { return _motor; }
             set
             {
-                //TODO: duplication +
                 CheckIsMotorEmpty(value);
                 _motor = value;
             }

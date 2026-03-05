@@ -1,7 +1,6 @@
 ﻿
 namespace Model
 {
-    //TODO: XML +
     /// <summary>
     /// Класс двигатель
     /// </summary>
@@ -36,7 +35,6 @@ namespace Model
             get { return _power; }
             set 
             {
-                //TODO: duplication +
                 TransportBase.ReadPositiveNumber(value);
                 _power = value;
             }
