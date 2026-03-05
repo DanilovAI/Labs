@@ -213,7 +213,7 @@ namespace ConsoleLoader
 
                 ()=>
                 {
-                    car.Weight = ReadCarMass();
+                    car.Weight = ReadCarWeight();
                 },
             };
 
@@ -251,7 +251,7 @@ namespace ConsoleLoader
 
                 ()=>
                 {
-                    hybridCar.Weight = ReadCarMass();
+                    hybridCar.Weight = ReadCarWeight();
                 },
             };
 
@@ -280,7 +280,7 @@ namespace ConsoleLoader
 
                 ()=>
                 {
-                    helicopter.Weight = ReadHelicopterMass();
+                    helicopter.Weight = ReadHelicopterWeight();
                 },
             };
 
@@ -436,7 +436,7 @@ namespace ConsoleLoader
             const int minPower = 1;
             const int maxPower = 2300;
 
-            return ReadPower(minPower, maxPower);
+            return ReadData(minPower, maxPower, "мощность", "л.с.");
         }
 
         /// <summary>
@@ -448,90 +448,66 @@ namespace ConsoleLoader
             const int minPower = 100;
             const int maxPower = 22800;
 
-            return ReadPower(minPower, maxPower);
+            return ReadData(minPower, maxPower, "мощность", "л.с.");
         }
 
         /// <summary>
         /// Ввод массы автомобиля в тоннах
         /// </summary>
         /// <returns>Масса авто в тоннах</returns>
-        public static double ReadCarMass()
+        public static double ReadCarWeight()
         {
-            const double minMass = 0.1;
-            const double maxMass = 10;
+            const double minWeight = 0.1;
+            const double maxWeight = 10;
 
-            return ReadMass(minMass, maxMass);
+            return ReadData(minWeight, maxWeight, "массу", "т");
         }
 
         /// <summary>
         /// Ввод массы вертолета в тоннах
         /// </summary>
         /// <returns>Масса вертолета в тоннах</returns>
-        public static double ReadHelicopterMass()
+        public static double ReadHelicopterWeight()
         {
-            const double minMass = 0.1;
-            const double maxMass = 56;
+            const double minWeight = 0.1;
+            const double maxWeight = 56;
 
-            return ReadMass(minMass, maxMass);
+            return ReadData(minWeight, maxWeight, "массу", "т");
         }
 
-        //TODO: duplication
+        //TODO: duplication +
+
+        //TODO: duplication +
+
         /// <summary>
-        /// Ввод мощности в л.с.
+        /// Чтение данных с заданием единиц измерения
         /// </summary>
-        /// <param name="minPower">Минимальная мощность</param>
-        /// <param name="maxPower">Максимальная мощность</param>
-        /// <returns>Мощность в л.с.</returns>
-        public static double ReadPower(double minPower, double maxPower)
-        {   
-            double power;
-            do
-            {
-                Console.Write($"\nВведите мощность двигателя в л.с. " +
-                      $"(не более {maxPower} л.с.): ");
-                power = Convert.ToDouble(Console.ReadLine());
-
-                if (power < minPower || power > maxPower)
-                {
-                    Console.WriteLine($"\nПожалуйста, " +
-                        $"введите мощность двигателя в пределах от " +
-                        $"{minPower} до {maxPower} л.с.");
-                }
-            }
-            while (power < minPower || power > maxPower);
-
-            return power;
-        }
-
-        //TODO: duplication
-        /// <summary>
-        /// Ввод массы в тоннах
-        /// </summary>
-        /// <param name="minMass">Минимальная масса</param>
-        /// <param name="maxMass">Максимальная масса</param>
-        /// <returns>Масса в тоннах</returns>
-        public static double ReadMass(double minMass, double maxMass)
+        /// <param name="minValue">Минимальное значение</param>
+        /// <param name="maxValue">Максимальное значение</param>
+        /// <param name="data">Название величины</param>
+        /// <param name="units">Единицы измерения</param>
+        /// <returns>Значение величины</returns>
+        public static double ReadData(double minValue, double maxValue, string data, string units)
         {
-            double mass;
+            double value;
             do
             {
-                Console.Write($"\nВведите массу машины в тоннах " +
-                    $"(не более {maxMass} тонн): ");
+                Console.Write($"\nВведите {data} ({units}) " +
+                    $"(не более {maxValue} {units}): ");
 
-                mass = Convert.ToDouble(Console.ReadLine());
+                value = Convert.ToDouble(Console.ReadLine());
 
-                if (mass < minMass || mass > maxMass)
+                if (value < minValue || value > maxValue)
                 {
                     Console.WriteLine($"\nПожалуйста," +
-                        $" введите массу в пределах от {minMass} " +
-                        $"до {maxMass} тонн.");
+                        $" введите {data} в пределах от {minValue} " +
+                        $"до {maxValue} {units}.");
                 }
             }
-            while (mass < minMass || mass > maxMass);
+            while (value < minValue || value > maxValue);
 
-            return mass;
+            return value;
         }
-
 
         /// <summary>
         /// Проверка на ввод положительного числа

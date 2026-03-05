@@ -15,11 +15,11 @@ namespace Model
         /// Конструктор класса вертолет
         /// </summary>
         /// <param name="motor">Двигатель</param>
-        /// <param name="mass">Масса (т)</param>
-        public Helicopter(Motor motor, double mass)
+        /// <param name="weight">Масса (т)</param>
+        public Helicopter(Motor motor, double weight)
         {
             Motor = motor;
-            Weight = mass;
+            Weight = weight;
         }
 
         /// <summary>

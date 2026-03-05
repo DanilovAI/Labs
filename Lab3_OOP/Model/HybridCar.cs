@@ -15,10 +15,10 @@ namespace Model
         /// Конструктор класса машина-гибрид
         /// </summary>
         /// <param name="motor">Основной двигатель</param>
-        /// <param name="mass">Масса</param>
+        /// <param name="weight">Масса</param>
         /// <param name="additionalMotor">Дополнительный двигатель</param>
-        public HybridCar(Motor motor, double mass, Motor additionalMotor) :
-            base(motor, mass)
+        public HybridCar(Motor motor, double weight, Motor additionalMotor) :
+            base(motor, weight)
         {
             AdditionalMotor = additionalMotor;
         }
