@@ -24,7 +24,7 @@ namespace Model
         public Car(Motor motor, double mass) 
         {
             Motor = motor;
-            Mass = mass;
+            Weight = mass;
         }
 
         /// <summary>
@@ -40,12 +40,8 @@ namespace Model
             get { return _motor; } 
             set 
             {
-                //TODO: duplication
-                if (value is null)
-                {
-                    throw new NullReferenceException 
-                        ("Значение не может быть пустым");
-                }
+                //TODO: duplication +
+                CheckIsMotorEmpty(value);
                 _motor = value;
             } 
         }
@@ -59,7 +55,7 @@ namespace Model
         {
             double coeffСonsumption = Motor.СalculateConsumption();
 
-            return distance * coeffСonsumption * Mass;
+            return distance * coeffСonsumption * Weight;
         }
     }
 }

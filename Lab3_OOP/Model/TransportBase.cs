@@ -7,28 +7,24 @@ namespace Model
     /// </summary>
     public abstract class TransportBase
     {
-        //TODO: rename
+        //TODO: rename +
         /// <summary>
         /// Масса (т)
         /// </summary>
-        private double _mass;
+        private double _weight;
 
-        //TODO: rename
+        //TODO: rename +
         /// <summary>
         /// Свойство масса
         /// </summary>
-        public double Mass
+        public double Weight
         {
-            get { return _mass; }
+            get { return _weight; }
             set
             {
-                //TODO: duplication
-                if (value <= 0)
-                {
-                    throw new ArgumentException
-                        ("Масса должна быть положительной!");
-                }
-                _mass = value;
+                //TODO: duplication +
+                ReadPositiveNumber(value);
+                _weight = value;
             }
         }
 
@@ -38,5 +34,34 @@ namespace Model
         /// <param name="distance">Расстояние (км)</param>
         /// <returns>Величина расхода топлива (л)</returns>
         public abstract double CalculateFuel(double distance);
+
+        /// <summary>
+        /// Проверка пустое ли поле
+        /// </summary>
+        /// <param name="value"></param>
+        /// <exception cref="NullReferenceException">Исключение:
+        /// пустое значение</exception>
+        protected static void CheckIsMotorEmpty(Motor value)
+        {
+            if (value is null)
+            {
+                throw new NullReferenceException
+                    ("Значение не может быть пустым");
+            }
+        }
+
+        /// <summary>
+        /// Проверка на ввод положительного числа
+        /// </summary>
+        /// <param name="value"></param>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
+        public static void ReadPositiveNumber(double value)
+        {
+            if (value <= 0)
+            {
+                throw new ArgumentOutOfRangeException("Число должно " +
+                    "быть положительным");
+            }
+        }
     }
 }

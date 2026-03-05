@@ -42,12 +42,8 @@ namespace Model
                     throw new ArgumentException("Вид топлива основного " +
                         "двигателя и дополнительного должны отличаться");
                 }
-                //TODO: duplication
-                if (value is null)
-                {
-                    throw new NullReferenceException
-                              ("Значение не может быть пустым");
-                }
+                //TODO: duplication +
+                CheckIsMotorEmpty(value);
                 _additionalMotor = value;
             }
         }
@@ -67,7 +63,7 @@ namespace Model
             double coeffСonsumptionAdd = 
                 AdditionalMotor.СalculateConsumption();
 
-            return halfDistance * Mass * (coeffСonsumption +
+            return halfDistance * Weight * (coeffСonsumption +
                                             coeffСonsumptionAdd);
         }
 

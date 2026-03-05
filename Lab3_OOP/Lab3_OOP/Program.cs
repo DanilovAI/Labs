@@ -27,27 +27,27 @@ namespace ConsoleLoader
 
                 switch (readProgram)
                 {
-                    //TODO: отступы
+                    //TODO: отступы +
                     case '1':
-                        {
-                            TransportBase transport = SelectTransport();
-                            СalculateСonsumptionFuel(transport);
-                            break;
-                        }
+                    {
+                        TransportBase transport = SelectTransport();
+                        СalculateСonsumptionFuel(transport);
+                        break;
+                    }
 
                     case '2':
-                        {
-                            Console.WriteLine("\nПрограмма завершена");
-                            workProgram = false;
-                            break;
-                        }
+                    {
+                        Console.WriteLine("\nПрограмма завершена");
+                        workProgram = false;
+                        break;
+                    }
 
                     default:
-                        {
-                            Console.WriteLine("\nНекорректный ввод. " +
-                                "Попробуйте еще раз");
-                            break;
-                        }
+                    {
+                        Console.WriteLine("\nНекорректный ввод. " +
+                            "Попробуйте еще раз");
+                        break;
+                    }
                 }
             }
         }
@@ -214,7 +214,7 @@ namespace ConsoleLoader
 
                 ()=>
                 {
-                    car.Mass = ReadMass();
+                    car.Weight = ReadCarMass();
                 },
             };
 
@@ -252,7 +252,7 @@ namespace ConsoleLoader
 
                 ()=>
                 {
-                    hybridCar.Mass = ReadMass();
+                    hybridCar.Weight = ReadCarMass();
                 },
             };
 
@@ -281,7 +281,7 @@ namespace ConsoleLoader
 
                 ()=>
                 {
-                    helicopter.Mass = ReadHelicopterMass();
+                    helicopter.Weight = ReadHelicopterMass();
                 },
             };
 
@@ -428,17 +428,66 @@ namespace ConsoleLoader
             return additionalMotor;
         }
 
-        //TODO: duplication
+        //TODO: duplication +
         /// <summary>
         /// Ввод мощности двигателя авто в л.с.
         /// </summary>
         /// <returns>Мощность в л.с.</returns>
         public static double ReadCarMotorPower()
         {
-            double power;
             const int minPower = 1;
             const int maxPower = 2300;
 
+            return ReadPower(minPower, maxPower);
+        }
+
+        /// <summary>
+        /// Ввод мощности вертолета в л.с.
+        /// </summary>
+        /// <returns>Мощность вертолета в л.с.</returns>
+        public static double ReadHelicopterMotorPower()
+        {
+            const int minPower = 100;
+            const int maxPower = 22800;
+
+            return ReadPower(minPower, maxPower);
+        }
+
+        //TODO: duplication +
+        /// <summary>
+        /// Ввод массы автомобиля в тоннах
+        /// </summary>
+        /// <returns>Масса авто в тоннах</returns>
+        public static double ReadCarMass()
+        {
+            const double minMass = 0.1;
+            const double maxMass = 10;
+
+            return ReadMass(minMass, maxMass);
+        }
+
+        //TODO: duplication +
+        /// <summary>
+        /// Ввод массы вертолета в тоннах
+        /// </summary>
+        /// <returns>Масса вертолета в тоннах</returns>
+        public static double ReadHelicopterMass()
+        {
+            const double minMass = 0.1;
+            const double maxMass = 56;
+
+            return ReadMass(minMass, maxMass);
+        }
+
+        /// <summary>
+        /// Ввод мощности в л.с.
+        /// </summary>
+        /// <param name="minPower">Минимальная мощность</param>
+        /// <param name="maxPower">Максимальная мощность</param>
+        /// <returns>Мощность в л.с.</returns>
+        public static double ReadPower(double minPower, double maxPower)
+        {   
+            double power;
             do
             {
                 Console.Write($"\nВведите мощность двигателя в л.с. " +
@@ -451,50 +500,21 @@ namespace ConsoleLoader
                         $"введите мощность двигателя в пределах от " +
                         $"{minPower} до {maxPower} л.с.");
                 }
-            } 
+            }
             while (power < minPower || power > maxPower);
 
             return power;
         }
 
         /// <summary>
-        /// Ввод мощности вертолета в л.с.
+        /// Ввод массы в тоннах
         /// </summary>
-        /// <returns>Мощность вертолета в л.с.</returns>
-        public static double ReadHelicopterMotorPower()
-        {
-            double power;
-            const int minPower = 100;
-            const int maxPower = 22800;
-
-            do
-            {
-                Console.Write($"\nВведите мощность двигателя " +
-                    $"вертолета в л.с. (не более {maxPower} л.с.): " +
-                              $": ");
-                power = Convert.ToDouble(Console.ReadLine());
-
-                if (power < minPower || power > maxPower)
-                {
-                    Console.WriteLine($"\nПожалуйста, " +
-                        $"введите мощность двигателя в пределах " +
-                        $"от {minPower} до {minPower} л.с.");
-                }
-            } while (power < minPower || power > maxPower);
-
-            return power;
-        }
-
-        //TODO: duplication
-        /// <summary>
-        /// Ввод массы автомобиля в тоннах
-        /// </summary>
-        /// <returns></returns>
-        public static double ReadMass()
+        /// <param name="minMass">Минимальная масса</param>
+        /// <param name="maxMass">Максимальная масса</param>
+        /// <returns>Масса в тоннах</returns>
+        public static double ReadMass(double minMass, double maxMass)
         {
             double mass;
-            const double minMass = 0.1;
-            const double maxMass = 10;
             do
             {
                 Console.Write($"\nВведите массу машины в тоннах " +
@@ -506,41 +526,14 @@ namespace ConsoleLoader
                 {
                     Console.WriteLine($"\nПожалуйста," +
                         $" введите массу в пределах от {minMass} " +
-                        $"до {minMass} тонн.");
+                        $"до {maxMass} тонн.");
                 }
-            } while (mass < minMass || mass > maxMass);
+            }
+            while (mass < minMass || mass > maxMass);
 
             return mass;
         }
 
-        //TODO: duplication
-        /// <summary>
-        /// Ввод массы вертолета в тоннах
-        /// </summary>
-        /// <returns>Масса вертолета в тоннах</returns>
-        public static double ReadHelicopterMass()
-        {
-            double mass;
-            const double minMass = 0.1;
-            const double maxMass = 56;
-
-            do
-            {
-                Console.Write($"\nВведите массу вертолета в тоннах " +
-                    $"(не более {maxMass} тонн): ");
-
-                mass = Convert.ToDouble(Console.ReadLine());
-
-                if (mass < minMass || mass > maxMass)
-                {
-                    Console.WriteLine($"\nПожалуйста, " +
-                        $"введите массу в пределах от " +
-                        $"{minMass} до {maxMass} тонн.");
-                }
-            } while (mass < minMass || mass > maxMass);
-
-            return mass;
-        }
 
         /// <summary>
         /// Проверка на ввод положительного числа

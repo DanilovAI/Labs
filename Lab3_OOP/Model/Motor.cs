@@ -1,7 +1,10 @@
 ﻿
 namespace Model
 {
-    //TODO: XML
+    //TODO: XML +
+    /// <summary>
+    /// Класс двигатель
+    /// </summary>
     public class Motor
     {
         /// <summary>
@@ -33,12 +36,8 @@ namespace Model
             get { return _power; }
             set 
             {
-                //TODO: duplication
-                if (value <= 0)
-                {
-                    throw new ArgumentException
-                        ("Мощность должна быть положительной");
-                }
+                //TODO: duplication +
+                TransportBase.ReadPositiveNumber(value);
                 _power = value;
             }
         }
