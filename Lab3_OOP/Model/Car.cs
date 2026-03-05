@@ -20,7 +20,6 @@ namespace Model
         /// Конструктор класса машина
         /// </summary>
         /// <param name="motor">Двигатель</param>
-        /// //TODO: rename +
         /// <param name="weight">Масса (т)</param>
         public Car(Motor motor, double weight) 
         {

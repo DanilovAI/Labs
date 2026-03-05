@@ -475,10 +475,6 @@ namespace ConsoleLoader
             return ReadData(minWeight, maxWeight, "массу", "т");
         }
 
-        //TODO: duplication +
-
-        //TODO: duplication +
-
         /// <summary>
         /// Чтение данных с заданием единиц измерения
         /// </summary>
@@ -487,7 +483,8 @@ namespace ConsoleLoader
         /// <param name="data">Название величины</param>
         /// <param name="units">Единицы измерения</param>
         /// <returns>Значение величины</returns>
-        public static double ReadData(double minValue, double maxValue, string data, string units)
+        public static double ReadData(double minValue, double maxValue, 
+            string data, string units)
         {
             double value;
             do
