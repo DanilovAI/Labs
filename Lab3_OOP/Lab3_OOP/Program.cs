@@ -27,6 +27,7 @@ namespace ConsoleLoader
 
                 switch (readProgram)
                 {
+                    //TODO: отступы
                     case '1':
                         {
                             TransportBase transport = SelectTransport();
@@ -427,7 +428,7 @@ namespace ConsoleLoader
             return additionalMotor;
         }
 
-
+        //TODO: duplication
         /// <summary>
         /// Ввод мощности двигателя авто в л.с.
         /// </summary>
@@ -484,6 +485,7 @@ namespace ConsoleLoader
             return power;
         }
 
+        //TODO: duplication
         /// <summary>
         /// Ввод массы автомобиля в тоннах
         /// </summary>
@@ -511,6 +513,7 @@ namespace ConsoleLoader
             return mass;
         }
 
+        //TODO: duplication
         /// <summary>
         /// Ввод массы вертолета в тоннах
         /// </summary>

@@ -42,7 +42,7 @@ namespace Model
                     throw new ArgumentException("Вид топлива основного " +
                         "двигателя и дополнительного должны отличаться");
                 }
-
+                //TODO: duplication
                 if (value is null)
                 {
                     throw new NullReferenceException

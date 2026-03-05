@@ -7,11 +7,13 @@ namespace Model
     /// </summary>
     public abstract class TransportBase
     {
+        //TODO: rename
         /// <summary>
         /// Масса (т)
         /// </summary>
         private double _mass;
 
+        //TODO: rename
         /// <summary>
         /// Свойство масса
         /// </summary>
@@ -20,6 +22,7 @@ namespace Model
             get { return _mass; }
             set
             {
+                //TODO: duplication
                 if (value <= 0)
                 {
                     throw new ArgumentException

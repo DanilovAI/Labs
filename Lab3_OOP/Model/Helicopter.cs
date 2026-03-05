@@ -36,6 +36,7 @@ namespace Model
             get { return _motor; }
             set
             {
+                //TODO: duplication
                 if (value is null)
                 {
                     throw new NullReferenceException

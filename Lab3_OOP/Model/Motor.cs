@@ -1,6 +1,7 @@
 ﻿
 namespace Model
 {
+    //TODO: XML
     public class Motor
     {
         /// <summary>
@@ -32,6 +33,7 @@ namespace Model
             get { return _power; }
             set 
             {
+                //TODO: duplication
                 if (value <= 0)
                 {
                     throw new ArgumentException
