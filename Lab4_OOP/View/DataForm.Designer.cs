@@ -202,8 +202,9 @@
             Controls.Add(_labelTransportType);
             Controls.Add(_groupBoxDataHybridCar);
             Controls.Add(_groupBoxData);
-            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
             Name = "DataForm";
             Text = "Добавить транспорт";
             _groupBoxData.ResumeLayout(false);

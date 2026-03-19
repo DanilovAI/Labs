@@ -143,8 +143,9 @@
             Controls.Add(_buttonSaveTransport);
             Controls.Add(_buttonFindTransport);
             Controls.Add(_buttonAddTransport);
-            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
             Name = "MainForm";
             _groupBoxTransport.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)_gridControlTransport).EndInit();

@@ -217,8 +217,9 @@
             Controls.Add(_buttonAgree);
             Controls.Add(_groupBoxFilterData);
             Controls.Add(_groupBoxFilterType);
-            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
             Name = "FilterForm";
             Text = "Найти";
             _groupBoxFilterType.ResumeLayout(false);

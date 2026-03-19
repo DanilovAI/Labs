@@ -149,27 +149,27 @@ namespace View
         {
             switch (typeTransport)
             {
-                //TOOD: отступы
+                //TOOD: отступы +
                 case TypeTransport.Car:
-                    {
-                        return CreateCar();
-                    }
+                {
+                    return CreateCar();
+                }
 
                 case TypeTransport.HybridCar:
-                    {
-                        return CreateHybridCar();
-                    }
+                {
+                    return CreateHybridCar();
+                }
 
                 case TypeTransport.Helicopter:
-                    {
-                        return CreateHelicopter();
-                    }
+                {
+                    return CreateHelicopter();
+                }
 
                 default:
-                    {
-                        throw new ArgumentException(
-                            "Неизвестный тип транспорта");
-                    }
+                {
+                    throw new ArgumentException(
+                        "Неизвестный тип транспорта");
+                }
             }
         }
 
@@ -316,22 +316,22 @@ namespace View
 
             switch (typeTransport)
             {
-                //TOOD: отступы
+                //TOOD: отступы +
                 case TypeTransport.Car:
-                    {
-                        _groupBoxDataHybridCar.Visible = false;
-                        break;
-                    }
+                {
+                    _groupBoxDataHybridCar.Visible = false;
+                    break;
+                }
                 case TypeTransport.HybridCar:
-                    {
-                        _groupBoxDataHybridCar.Visible = true;
-                        break;
-                    }
+                {
+                    _groupBoxDataHybridCar.Visible = true;
+                    break;
+                }
                 case TypeTransport.Helicopter:
-                    {
-                        _groupBoxDataHybridCar.Visible = false;
-                        break;
-                    }
+                {
+                    _groupBoxDataHybridCar.Visible = false;
+                    break;
+                }
             }
         }
 
@@ -429,28 +429,28 @@ namespace View
         /// </summary>
         private double GetMaxValueForTextBox(TextBox textBox)
         {
-            switch (textBox.Name)
+            Dictionary<TextBox, double> _textBoxMaxValues =
+                new Dictionary<TextBox, double>
             {
-                //TOOD: отступы
-                //TODO: refactor
-                case "_textBoxWeight":
-                    { 
-                        return 100; 
-                    }
-                case "_textBoxPower":
-                    {
-                        return 10000;
-                    }
-                case "_textBoxHybridPower":
-                    {
-                        return 1000;
-                    }
-                default:
-                    {
-                        return double.MaxValue;
-                    }  
+                {_textBoxWeight, 100},
+                {_textBoxPower, 10000},
+                {_textBoxHybridPower, 1000}
+            };
+
+            //TODO: refactor +
+            if (textBox == null)
+            {
+                return double.MaxValue;
             }
+
+            if (_textBoxMaxValues.TryGetValue(textBox, out double maxValue))
+            {
+                return maxValue;
+            }
+            return double.MaxValue;
+
         }
+        
 
 #if DEBUG
         /// <summary>
