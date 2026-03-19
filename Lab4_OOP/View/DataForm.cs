@@ -124,7 +124,6 @@ namespace View
                 {
                     TransportAdded?.Invoke(this,
                         new TransportAddedEventArgs(transport));
-                    _lastTransport = transport;
                 }
             }
             catch (Exception ex)
