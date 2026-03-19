@@ -27,6 +27,7 @@ namespace View
         /// </summary>
         public EventHandler TransportCancel;
 
+        //TODO: remove
         /// <summary>
         /// Поле для хранения последнего добавленного объекта
         /// </summary>
@@ -149,7 +150,6 @@ namespace View
         {
             switch (typeTransport)
             {
-                //TOOD: отступы +
                 case TypeTransport.Car:
                 {
                     return CreateCar();
@@ -316,7 +316,6 @@ namespace View
 
             switch (typeTransport)
             {
-                //TOOD: отступы +
                 case TypeTransport.Car:
                 {
                     _groupBoxDataHybridCar.Visible = false;
@@ -437,7 +436,6 @@ namespace View
                 {_textBoxHybridPower, 1000}
             };
 
-            //TODO: refactor +
             if (textBox == null)
             {
                 return double.MaxValue;
