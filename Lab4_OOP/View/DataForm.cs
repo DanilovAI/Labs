@@ -27,11 +27,7 @@ namespace View
         /// </summary>
         public EventHandler TransportCancel;
 
-        //TODO: remove
-        /// <summary>
-        /// Поле для хранения последнего добавленного объекта
-        /// </summary>
-        private TransportBase _lastTransport;
+        //TODO: remove +
 
         /// <summary>
         /// Словарь тип транспорта
