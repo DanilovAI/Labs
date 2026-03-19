@@ -41,7 +41,9 @@
             _textBoxHybridPower = new TextBox();
             _comboBoxTransportType = new ComboBox();
             _buttonAgree = new Button();
+#if DEBUG
             _buttonRandom = new Button();
+#endif
             _groupBoxData.SuspendLayout();
             _groupBoxDataHybridCar.SuspendLayout();
             SuspendLayout();
@@ -180,6 +182,7 @@
             // 
             // _buttonRandom
             // 
+#if DEBUG
             _buttonRandom.Location = new Point(32, 238);
             _buttonRandom.Margin = new Padding(3, 2, 3, 2);
             _buttonRandom.Name = "_buttonRandom";
@@ -188,13 +191,16 @@
             _buttonRandom.Text = "Заполнить";
             _buttonRandom.UseVisualStyleBackColor = true;
             _buttonRandom.Click += ButtonRandomClick;
+#endif
             // 
             // DataForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(483, 268);
+#if DEBUG
             Controls.Add(_buttonRandom);
+#endif
             Controls.Add(_buttonAgree);
             Controls.Add(_comboBoxTransportType);
             Controls.Add(_labelWeight);
@@ -215,7 +221,7 @@
             PerformLayout();
         }
 
-        #endregion
+#endregion
 
         private Label _labelTransportType;
         private Label _labelFuel;
