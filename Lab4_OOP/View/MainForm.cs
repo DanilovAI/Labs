@@ -30,6 +30,7 @@ namespace View
         private readonly XmlSerializer _serializerXml =
             new XmlSerializer(typeof(BindingList<TransportBase>));
 
+        //TODO: RSDN
         /// <summary>
         /// Свойство для отслеживания активности фильтров
         /// </summary>
@@ -77,7 +78,6 @@ namespace View
                 dataForm.FormClosed += (s, args) =>
                 {
                     _isDataFormOpen = false;
-
                 };
                 dataForm.TransportAdded += AddedTransport;
                 dataForm.TransportCancel += CancelTransport;

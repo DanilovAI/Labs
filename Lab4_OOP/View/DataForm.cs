@@ -146,6 +146,7 @@ namespace View
         /// <exception cref="ArgumentException"></exception>
         private TransportBase CreateTransport(TypeTransport typeTransport)
         {
+            //TODO: {}
             switch (typeTransport)
             {
                 case TypeTransport.Car:
@@ -252,6 +253,7 @@ namespace View
                 return false;
             }
 
+            //TODO: duplication
             if (!double.TryParse(_textBoxWeight.Text, out double weight) ||
                 weight <= 0)
             {
@@ -262,6 +264,7 @@ namespace View
                 return false;
             }
 
+            //TODO: duplication
             if (!double.TryParse(_textBoxPower.Text, out double power)
                 || power <= 0)
             {
@@ -272,6 +275,7 @@ namespace View
                 return false;
             }
 
+            //TODO: duplication
             if (_groupBoxDataHybridCar.Visible)
             {
                 if (!double.TryParse(_textBoxHybridPower.Text,
@@ -314,6 +318,7 @@ namespace View
 
             switch (typeTransport)
             {
+                //TOOD: отступы
                 case TypeTransport.Car:
                     {
                         _groupBoxDataHybridCar.Visible = false;
