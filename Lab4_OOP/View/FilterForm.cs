@@ -192,6 +192,5 @@ namespace View
                 return false;
             }).ToList();
         }
-
     }
 }

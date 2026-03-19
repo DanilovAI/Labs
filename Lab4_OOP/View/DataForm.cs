@@ -147,9 +147,9 @@ namespace View
         /// <exception cref="ArgumentException"></exception>
         private TransportBase CreateTransport(TypeTransport typeTransport)
         {
-            //TODO: {} +
             switch (typeTransport)
             {
+                //TOOD: отступы
                 case TypeTransport.Car:
                     {
                         return CreateCar();
@@ -262,13 +262,10 @@ namespace View
                 return false;
             }
 
-            //TODO: duplication +
             ValidateValue(_textBoxWeight.Text, "массу");
 
-            //TODO: duplication +
             ValidateValue(_textBoxPower.Text, "мощность");
 
-            //TODO: duplication +
             if (_groupBoxDataHybridCar.Visible)
             {
                 ValidateValue(_textBoxHybridPower.Text, "гибридной машины");
@@ -434,6 +431,8 @@ namespace View
         {
             switch (textBox.Name)
             {
+                //TOOD: отступы
+                //TODO: refactor
                 case "_textBoxWeight":
                     { 
                         return 100; 
