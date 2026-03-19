@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Model;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace View
 {
@@ -146,21 +147,29 @@ namespace View
         /// <exception cref="ArgumentException"></exception>
         private TransportBase CreateTransport(TypeTransport typeTransport)
         {
-            //TODO: {}
+            //TODO: {} +
             switch (typeTransport)
             {
                 case TypeTransport.Car:
-                    return CreateCar();
+                    {
+                        return CreateCar();
+                    }
 
                 case TypeTransport.HybridCar:
-                    return CreateHybridCar();
+                    {
+                        return CreateHybridCar();
+                    }
 
                 case TypeTransport.Helicopter:
-                    return CreateHelicopter();
+                    {
+                        return CreateHelicopter();
+                    }
 
                 default:
-                    throw new ArgumentException(
-                        "Неизвестный тип транспорта");
+                    {
+                        throw new ArgumentException(
+                            "Неизвестный тип транспорта");
+                    }
             }
         }
 
@@ -253,45 +262,37 @@ namespace View
                 return false;
             }
 
-            //TODO: duplication
-            if (!double.TryParse(_textBoxWeight.Text, out double weight) ||
-                weight <= 0)
-            {
-                MessageBox.Show("Введите корректную массу.",
-                    "Ошибка",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-                return false;
-            }
+            //TODO: duplication +
+            ValidateValue(_textBoxWeight.Text, "массу");
 
-            //TODO: duplication
-            if (!double.TryParse(_textBoxPower.Text, out double power)
-                || power <= 0)
-            {
-                MessageBox.Show("Введите корректную мощность.",
-                    "Ошибка",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-                return false;
-            }
+            //TODO: duplication +
+            ValidateValue(_textBoxPower.Text, "мощность");
 
-            //TODO: duplication
+            //TODO: duplication +
             if (_groupBoxDataHybridCar.Visible)
             {
-                if (!double.TryParse(_textBoxHybridPower.Text,
-                    out double powerHybrid)
-                || powerHybrid <= 0)
-                {
-                    MessageBox.Show(
-                        "Введите корректную мощность гибридной машины.",
-                        "Ошибка",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                    return false;
-                }
+                ValidateValue(_textBoxHybridPower.Text, "гибридной машины");
             }
+            return true;
+        }
 
-
+        /// <summary>
+        /// Валидация входных данных
+        /// </summary>
+        /// <param name="text">Строка из TextBox</param>
+        /// <param name="unit">Параметр</param>
+        /// <returns></returns>
+        private static bool ValidateValue(string text, string unit)
+        {
+            if (!double.TryParse(text, out double value) ||
+                value <= 0)
+            {
+                MessageBox.Show($"Введите корректную {unit}.",
+                    "Ошибка",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return false;
+            }
             return true;
         }
 
@@ -373,20 +374,6 @@ namespace View
         }
 
         /// <summary>
-        /// Метод нажатия на кнопку "Отмена"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonCancelClick(object sender, EventArgs e)
-        {
-            if (_lastTransport != null)
-            {
-                TransportCancel?.Invoke(this,
-                    new TransportAddedEventArgs(_lastTransport));
-            }
-        }
-
-        /// <summary>
         /// Проверка, допустимы ли данные, вводимые в TextBox
         /// </summary>
         /// <param name="sender"></param>
@@ -411,7 +398,61 @@ namespace View
             {
                 e.Handled = true;
             }
+
+            string newText = textBox.Text + e.KeyChar;
+
+            if (!char.IsControl(e.KeyChar))
+            {
+                if (double.TryParse(newText, out double result))
+                {
+                    double maxValue = GetMaxValueForTextBox(textBox);
+
+                    if (result > maxValue)
+                    {
+                        e.Handled = true;
+                    }
+                }
+            }
+
+            if (e.KeyChar != ',' && textBox.Text.Contains(","))
+            {
+                int commaIndex = textBox.Text.IndexOf(',');
+
+                int digitsAfterComma = textBox.Text.Length - commaIndex - 1;
+
+                if (digitsAfterComma >= 2 && !char.IsControl(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+            }
         }
+
+        /// <summary>
+        /// Получение максимального значения для конкретного TextBox
+        /// </summary>
+        private double GetMaxValueForTextBox(TextBox textBox)
+        {
+            switch (textBox.Name)
+            {
+                case "_textBoxWeight":
+                    { 
+                        return 100; 
+                    }
+                case "_textBoxPower":
+                    {
+                        return 10000;
+                    }
+                case "_textBoxHybridPower":
+                    {
+                        return 1000;
+                    }
+                default:
+                    {
+                        return double.MaxValue;
+                    }  
+            }
+        }
+
 #if DEBUG
         /// <summary>
         /// Заполнение случайными числами полей TextBox

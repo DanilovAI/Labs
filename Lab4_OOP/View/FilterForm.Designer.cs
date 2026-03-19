@@ -36,6 +36,7 @@
             _checkBoxFindHybridCar = new CheckBox();
             _checkBoxFindCar = new CheckBox();
             _groupBoxFilterData = new GroupBox();
+            _labelInsertRange = new Label();
             label1 = new Label();
             _labelPowerRange = new Label();
             _textBoxMaxWeight = new TextBox();
@@ -45,7 +46,6 @@
             _checkBoxWeight = new CheckBox();
             _checkBoxPower = new CheckBox();
             _buttonAgree = new Button();
-            _labelInsertRange = new Label();
             _groupBoxFilterType.SuspendLayout();
             _groupBoxFilterData.SuspendLayout();
             SuspendLayout();
@@ -55,9 +55,11 @@
             _groupBoxFilterType.Controls.Add(_checkBoxFindHelicopter);
             _groupBoxFilterType.Controls.Add(_checkBoxFindHybridCar);
             _groupBoxFilterType.Controls.Add(_checkBoxFindCar);
-            _groupBoxFilterType.Location = new Point(12, 12);
+            _groupBoxFilterType.Location = new Point(10, 9);
+            _groupBoxFilterType.Margin = new Padding(3, 2, 3, 2);
             _groupBoxFilterType.Name = "_groupBoxFilterType";
-            _groupBoxFilterType.Size = new Size(336, 123);
+            _groupBoxFilterType.Padding = new Padding(3, 2, 3, 2);
+            _groupBoxFilterType.Size = new Size(294, 92);
             _groupBoxFilterType.TabIndex = 0;
             _groupBoxFilterType.TabStop = false;
             _groupBoxFilterType.Text = "Тип транспорта";
@@ -65,9 +67,10 @@
             // _checkBoxFindHelicopter
             // 
             _checkBoxFindHelicopter.AutoSize = true;
-            _checkBoxFindHelicopter.Location = new Point(20, 86);
+            _checkBoxFindHelicopter.Location = new Point(18, 64);
+            _checkBoxFindHelicopter.Margin = new Padding(3, 2, 3, 2);
             _checkBoxFindHelicopter.Name = "_checkBoxFindHelicopter";
-            _checkBoxFindHelicopter.Size = new Size(94, 24);
+            _checkBoxFindHelicopter.Size = new Size(76, 19);
             _checkBoxFindHelicopter.TabIndex = 0;
             _checkBoxFindHelicopter.Text = "Вертолет";
             _checkBoxFindHelicopter.UseVisualStyleBackColor = true;
@@ -75,9 +78,10 @@
             // _checkBoxFindHybridCar
             // 
             _checkBoxFindHybridCar.AutoSize = true;
-            _checkBoxFindHybridCar.Location = new Point(20, 56);
+            _checkBoxFindHybridCar.Location = new Point(18, 42);
+            _checkBoxFindHybridCar.Margin = new Padding(3, 2, 3, 2);
             _checkBoxFindHybridCar.Name = "_checkBoxFindHybridCar";
-            _checkBoxFindHybridCar.Size = new Size(168, 24);
+            _checkBoxFindHybridCar.Size = new Size(134, 19);
             _checkBoxFindHybridCar.TabIndex = 0;
             _checkBoxFindHybridCar.Text = "Гибридная машина";
             _checkBoxFindHybridCar.UseVisualStyleBackColor = true;
@@ -85,9 +89,10 @@
             // _checkBoxFindCar
             // 
             _checkBoxFindCar.AutoSize = true;
-            _checkBoxFindCar.Location = new Point(20, 26);
+            _checkBoxFindCar.Location = new Point(18, 20);
+            _checkBoxFindCar.Margin = new Padding(3, 2, 3, 2);
             _checkBoxFindCar.Name = "_checkBoxFindCar";
-            _checkBoxFindCar.Size = new Size(90, 24);
+            _checkBoxFindCar.Size = new Size(74, 19);
             _checkBoxFindCar.TabIndex = 0;
             _checkBoxFindCar.Text = "Машина";
             _checkBoxFindCar.UseVisualStyleBackColor = true;
@@ -103,65 +108,81 @@
             _groupBoxFilterData.Controls.Add(_textBoxMinPower);
             _groupBoxFilterData.Controls.Add(_checkBoxWeight);
             _groupBoxFilterData.Controls.Add(_checkBoxPower);
-            _groupBoxFilterData.Location = new Point(12, 141);
+            _groupBoxFilterData.Location = new Point(10, 106);
+            _groupBoxFilterData.Margin = new Padding(3, 2, 3, 2);
             _groupBoxFilterData.Name = "_groupBoxFilterData";
-            _groupBoxFilterData.Size = new Size(336, 115);
+            _groupBoxFilterData.Padding = new Padding(3, 2, 3, 2);
+            _groupBoxFilterData.Size = new Size(294, 86);
             _groupBoxFilterData.TabIndex = 0;
             _groupBoxFilterData.TabStop = false;
             _groupBoxFilterData.Text = "Характеристики транспорта";
             // 
+            // _labelInsertRange
+            // 
+            _labelInsertRange.AutoSize = true;
+            _labelInsertRange.Location = new Point(18, 17);
+            _labelInsertRange.Name = "_labelInsertRange";
+            _labelInsertRange.Size = new Size(104, 15);
+            _labelInsertRange.TabIndex = 3;
+            _labelInsertRange.Text = "Введите диапазон";
+            // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(243, 79);
+            label1.Location = new Point(213, 59);
             label1.Name = "label1";
-            label1.Size = new Size(15, 20);
+            label1.Size = new Size(12, 15);
             label1.TabIndex = 2;
             label1.Text = "-";
             // 
             // _labelPowerRange
             // 
             _labelPowerRange.AutoSize = true;
-            _labelPowerRange.Location = new Point(243, 49);
+            _labelPowerRange.Location = new Point(213, 37);
             _labelPowerRange.Name = "_labelPowerRange";
-            _labelPowerRange.Size = new Size(15, 20);
+            _labelPowerRange.Size = new Size(12, 15);
             _labelPowerRange.TabIndex = 2;
             _labelPowerRange.Text = "-";
             // 
             // _textBoxMaxWeight
             // 
-            _textBoxMaxWeight.Location = new Point(261, 76);
+            _textBoxMaxWeight.Location = new Point(228, 57);
+            _textBoxMaxWeight.Margin = new Padding(3, 2, 3, 2);
             _textBoxMaxWeight.Name = "_textBoxMaxWeight";
-            _textBoxMaxWeight.Size = new Size(61, 27);
+            _textBoxMaxWeight.Size = new Size(54, 23);
             _textBoxMaxWeight.TabIndex = 1;
             // 
             // _textBoxMinWeight
             // 
-            _textBoxMinWeight.Location = new Point(180, 76);
+            _textBoxMinWeight.Location = new Point(158, 57);
+            _textBoxMinWeight.Margin = new Padding(3, 2, 3, 2);
             _textBoxMinWeight.Name = "_textBoxMinWeight";
-            _textBoxMinWeight.Size = new Size(61, 27);
+            _textBoxMinWeight.Size = new Size(54, 23);
             _textBoxMinWeight.TabIndex = 1;
             // 
             // _textBoxMaxPower
             // 
-            _textBoxMaxPower.Location = new Point(261, 46);
+            _textBoxMaxPower.Location = new Point(228, 34);
+            _textBoxMaxPower.Margin = new Padding(3, 2, 3, 2);
             _textBoxMaxPower.Name = "_textBoxMaxPower";
-            _textBoxMaxPower.Size = new Size(61, 27);
+            _textBoxMaxPower.Size = new Size(54, 23);
             _textBoxMaxPower.TabIndex = 1;
             // 
             // _textBoxMinPower
             // 
-            _textBoxMinPower.Location = new Point(180, 46);
+            _textBoxMinPower.Location = new Point(158, 34);
+            _textBoxMinPower.Margin = new Padding(3, 2, 3, 2);
             _textBoxMinPower.Name = "_textBoxMinPower";
-            _textBoxMinPower.Size = new Size(61, 27);
+            _textBoxMinPower.Size = new Size(54, 23);
             _textBoxMinPower.TabIndex = 1;
             // 
             // _checkBoxWeight
             // 
             _checkBoxWeight.AutoSize = true;
-            _checkBoxWeight.Location = new Point(20, 76);
+            _checkBoxWeight.Location = new Point(18, 57);
+            _checkBoxWeight.Margin = new Padding(3, 2, 3, 2);
             _checkBoxWeight.Name = "_checkBoxWeight";
-            _checkBoxWeight.Size = new Size(94, 24);
+            _checkBoxWeight.Size = new Size(77, 19);
             _checkBoxWeight.TabIndex = 0;
             _checkBoxWeight.Text = "Масса (т)";
             _checkBoxWeight.UseVisualStyleBackColor = true;
@@ -169,40 +190,35 @@
             // _checkBoxPower
             // 
             _checkBoxPower.AutoSize = true;
-            _checkBoxPower.Location = new Point(20, 46);
+            _checkBoxPower.Location = new Point(18, 34);
+            _checkBoxPower.Margin = new Padding(3, 2, 3, 2);
             _checkBoxPower.Name = "_checkBoxPower";
-            _checkBoxPower.Size = new Size(139, 24);
+            _checkBoxPower.Size = new Size(116, 19);
             _checkBoxPower.TabIndex = 0;
             _checkBoxPower.Text = "Мощность (л.с.)";
             _checkBoxPower.UseVisualStyleBackColor = true;
             // 
             // _buttonAgree
             // 
-            _buttonAgree.Location = new Point(254, 262);
+            _buttonAgree.Location = new Point(222, 196);
+            _buttonAgree.Margin = new Padding(3, 2, 3, 2);
             _buttonAgree.Name = "_buttonAgree";
-            _buttonAgree.Size = new Size(94, 29);
+            _buttonAgree.Size = new Size(82, 22);
             _buttonAgree.TabIndex = 1;
             _buttonAgree.Text = "ОК";
             _buttonAgree.UseVisualStyleBackColor = true;
             _buttonAgree.Click += ButtonAgreeClick;
             // 
-            // _labelInsertRange
-            // 
-            _labelInsertRange.AutoSize = true;
-            _labelInsertRange.Location = new Point(20, 23);
-            _labelInsertRange.Name = "_labelInsertRange";
-            _labelInsertRange.Size = new Size(136, 20);
-            _labelInsertRange.TabIndex = 3;
-            _labelInsertRange.Text = "Введите диапазон";
-            // 
             // FilterForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(360, 296);
+            ClientSize = new Size(315, 222);
             Controls.Add(_buttonAgree);
             Controls.Add(_groupBoxFilterData);
             Controls.Add(_groupBoxFilterType);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "FilterForm";
             Text = "Найти";
             _groupBoxFilterType.ResumeLayout(false);

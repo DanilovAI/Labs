@@ -30,11 +30,11 @@ namespace View
         private readonly XmlSerializer _serializerXml =
             new XmlSerializer(typeof(BindingList<TransportBase>));
 
-        //TODO: RSDN
+        //TODO: RSDN +
         /// <summary>
         /// Свойство для отслеживания активности фильтров
         /// </summary>
-        private bool _isFilterActive
+        private bool IsFilterActive
         {
             get
             {
@@ -193,7 +193,7 @@ namespace View
         /// </summary>
         private void UpdateButtonStates()
         {
-            bool isFilterActive = _isFilterActive;
+            bool isFilterActive = IsFilterActive;
 
             _buttonAddTransport.Enabled = !isFilterActive;
 
@@ -237,9 +237,12 @@ namespace View
         /// <param name="e"></param>
         private void ButtonResetTransportClick(object sender, EventArgs e)
         {
-            ResetFilters();
-            MessageBox.Show("Фильтры сброшены.", "Информация",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (IsFilterActive)
+            {
+                ResetFilters();
+                MessageBox.Show("Фильтры сброшены.", "Информация",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         /// <summary>

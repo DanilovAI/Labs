@@ -79,6 +79,12 @@ namespace Model
                 throw new ArgumentOutOfRangeException("Число должно " +
                     "быть положительным");
             }
+
+            if (double.IsNaN(value))
+            {
+                throw new ArgumentException("Значение не является" +
+                    " числом (NaN)");
+            }
         }
     }
 }
