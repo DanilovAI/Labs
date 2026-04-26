@@ -96,9 +96,9 @@ namespace Model
         {
             double halfDistance = distance / 2;
 
-            double coeffСonsumption = Motor.СalculateConsumption();
+            double coeffСonsumption = Motor.CalculateConsumption();
             double coeffСonsumptionAdd = 
-                AdditionalMotor.СalculateConsumption();
+                AdditionalMotor.CalculateConsumption();
 
             return halfDistance * Weight * (coeffСonsumption +
                                             coeffСonsumptionAdd);

@@ -49,7 +49,7 @@ namespace Model
         /// Расчет коэффициента расхода
         /// </summary>
         /// <returns>Коэффициент расхода</returns>
-        public double СalculateConsumption()
+        public double CalculateConsumption()
         {
             double consumptionPower;
 

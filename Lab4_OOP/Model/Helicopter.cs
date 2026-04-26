@@ -84,7 +84,7 @@ namespace Model
         /// <returns></returns>
         public override double CalculateFuel(double distance)
         {
-            double coeffСonsumption = Motor.СalculateConsumption();
+            double coeffСonsumption = Motor.CalculateConsumption();
 
             return distance * coeffСonsumption * Weight;
         }

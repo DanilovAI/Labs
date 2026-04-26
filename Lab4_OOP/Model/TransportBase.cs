@@ -76,7 +76,7 @@ namespace Model
         {
             if (value <= 0)
             {
-                throw new ArgumentOutOfRangeException("Число должно " +
+                throw new ArgumentException("Число должно " +
                     "быть положительным");
             }
 
@@ -84,6 +84,12 @@ namespace Model
             {
                 throw new ArgumentException("Значение не является" +
                     " числом (NaN)");
+            }
+
+            if (double.IsInfinity(value))
+            {
+                throw new ArgumentException("Значение не может " +
+                    "быть бесконечностью");
             }
         }
     }
