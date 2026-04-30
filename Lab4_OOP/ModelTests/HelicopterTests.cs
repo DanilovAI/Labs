@@ -3,8 +3,11 @@ using NUnit.Framework;
 
 namespace ModelTests
 {
+    //TODO: XML
     public class HelicopterTests
     {
+        //TODO: XML
+        //TODO: duplication
         private const double Tolerance = 1e-6;
 
         // ПОЗИТИВНЫЕ ТЕСТЫ

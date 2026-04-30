@@ -4,8 +4,10 @@ using NUnit.Framework.Constraints;
 
 namespace ModelTests
 {
+    //TODO: XML
     public class CarTests
     {
+        //TODO: XML
         private const double Tolerance = 1e-6;
 
         // ПОЗИТИВНЫЕ ТЕСТЫ
