@@ -57,7 +57,7 @@ namespace Model
             {
                 consumptionPower = 0.08;
             }
-            else if (100 < Power && Power <= 200)
+            else if (Power <= 200)
             {
                 consumptionPower = 0.09;
             }
