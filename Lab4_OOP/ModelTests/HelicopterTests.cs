@@ -3,12 +3,14 @@ using NUnit.Framework;
 
 namespace ModelTests
 {
-    //TODO: XML
+    //TODO: XML +
+    /// <summary>
+    /// Класс для тестирования класса Helicopter
+    /// </summary>
     public class HelicopterTests
     {
-        //TODO: XML
-        //TODO: duplication
-        private const double Tolerance = 1e-6;
+        //TODO: XML +
+        //TODO: duplication +
 
         // ПОЗИТИВНЫЕ ТЕСТЫ
 
@@ -27,7 +29,7 @@ namespace ModelTests
 
             // Assert
             Assert.AreEqual(motor, helicopter.Motor);
-            Assert.AreEqual(weight, helicopter.Weight, Tolerance);
+            Assert.AreEqual(weight, helicopter.Weight, TestTools.Tolerance);
             Assert.IsNotNull(helicopter);
         }
 
@@ -41,7 +43,7 @@ namespace ModelTests
             // Assert
             Assert.AreEqual(250, helicopter.Motor.Power);
             Assert.AreEqual(FuelType.AviationKerosene, helicopter.Motor.FuelType);
-            Assert.AreEqual(10.0, helicopter.Weight, Tolerance);
+            Assert.AreEqual(10.0, helicopter.Weight, TestTools.Tolerance);
             Assert.AreEqual("Вертолет", helicopter.TypeTransport);
         }
 
@@ -108,7 +110,7 @@ namespace ModelTests
 
             // Assert
             if (expected == 0)
-                Assert.AreEqual(0, fuel, Tolerance);
+                Assert.AreEqual(0, fuel, TestTools.Tolerance);
             else
                 Assert.Greater(fuel, 0);
         }

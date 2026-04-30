@@ -4,12 +4,13 @@ using NUnit.Framework.Constraints;
 
 namespace ModelTests
 {
-    //TODO: XML
+    //TODO: XML +
+    /// <summary>
+    /// Класс для тестирования класса Car
+    /// </summary>
     public class CarTests
     {
-        //TODO: XML
-        private const double Tolerance = 1e-6;
-
+        //TODO: XML + (перенесено в класс TestTools)
         // ПОЗИТИВНЫЕ ТЕСТЫ
 
         [TestCase(100, 1.2, FuelType.Petrol, TestName =
@@ -46,11 +47,11 @@ namespace ModelTests
             // Assert
             Assert.AreEqual(150, car.Motor.Power);
             Assert.AreEqual(FuelType.Petrol, car.Motor.FuelType);
-            Assert.AreEqual(1.0, car.Weight, Tolerance);
+            Assert.AreEqual(1.0, car.Weight, TestTools.Tolerance);
             Assert.AreEqual("Машина", car.TypeTransport);
             Assert.AreEqual(150, car1.Motor.Power);
             Assert.AreEqual(FuelType.Petrol, car1.Motor.FuelType);
-            Assert.AreEqual(1.0, car1.Weight, Tolerance);
+            Assert.AreEqual(1.0, car1.Weight, TestTools.Tolerance);
             Assert.AreEqual("Машина", car1.TypeTransport);
         }
 
@@ -119,7 +120,7 @@ namespace ModelTests
 
             // Assert
             if (expected == 0)
-                Assert.AreEqual(0, fuel, Tolerance);
+                Assert.AreEqual(0, fuel, TestTools.Tolerance);
             else
                 Assert.Greater(fuel, 0);
         }

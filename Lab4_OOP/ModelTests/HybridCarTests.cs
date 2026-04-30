@@ -3,12 +3,14 @@ using NUnit.Framework;
 
 namespace ModelTests
 {
-    //TODO: XML
+    //TODO: XML +
+    /// <summary>
+    /// Класс для тестирования класса HybridCar
+    /// </summary>
     public class HybridCarTests
     {
-        //TODO: XML
-        //TODO: duplication
-        private const double Tolerance = 1e-6;
+        //TODO: XML +
+        //TODO: duplication +
 
         // ПОЗИТИВНЫЕ ТЕСТЫ
 
@@ -30,7 +32,7 @@ namespace ModelTests
             // Assert
             Assert.AreEqual(mainMotor, hybrid.Motor);
             Assert.AreEqual(addMotor, hybrid.AdditionalMotor);
-            Assert.AreEqual(weight, hybrid.Weight, Tolerance);
+            Assert.AreEqual(weight, hybrid.Weight, TestTools.Tolerance);
         }
 
         [Test(Description = "Конструктор по умолчанию создаёт HybridCar " +
@@ -45,7 +47,7 @@ namespace ModelTests
             Assert.AreEqual(FuelType.Petrol, hybrid.Motor.FuelType);
             Assert.AreEqual(50, hybrid.AdditionalMotor.Power);
             Assert.AreEqual(FuelType.Electricity, hybrid.AdditionalMotor.FuelType);
-            Assert.AreEqual(1.0, hybrid.Weight, Tolerance);
+            Assert.AreEqual(1.0, hybrid.Weight, TestTools.Tolerance);
             Assert.AreEqual("Гибридная машина", hybrid.TypeTransport);
         }
 
@@ -115,7 +117,7 @@ namespace ModelTests
 
             // Assert
             if (expected == 0)
-                Assert.AreEqual(0, fuel, Tolerance);
+                Assert.AreEqual(0, fuel, TestTools.Tolerance);
             else
                 Assert.Greater(fuel, 0);
         }
